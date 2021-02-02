@@ -20,7 +20,7 @@ class Playlist:
       current_song = self.__first_song
       while current_song.get_next_song() != None:
         current_song = current_song.get_next_song()
-      current_song.set_next_song(new_song)
+      current_song.set_next_song(new_song.get_title())
       
 
 
@@ -44,7 +44,7 @@ class Playlist:
   def remove_song(self, title):
     current_song = self.__first_song
     while current_song.get_next_song() != None:
-      if current_song.get_next_song().get_title() == title:
+      if current_song.get_next_song().get_title() == str(title).title():
         current_song.set_next_song(current_song.get_next_song().get_next_song().get_title())
         break
 

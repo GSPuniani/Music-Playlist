@@ -55,7 +55,8 @@ while True:
 
   # Option 5: Return the length of the playlist
   elif user_selection == 5:
-    print(f"This set list has {playlist.length()} songs.")
+    print(f"This set list has {playlist.length()} song(s).")
+    # print(f"This set list has {playlist.length()} {"song" if playlist.length() == 1 else "songs"}.")
 
   # Message for invalid input
   else:
