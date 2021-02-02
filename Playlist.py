@@ -13,14 +13,14 @@ class Playlist:
       new_song = Song(title)
       # Assign the new song as the first of the playlist
       self.__first_song = new_song
-      new_song.set_next_song = None
+      # new_song.set_next_song = None
     else:
       # Create a new song object with title passed in
       new_song = Song(title)
       current_song = self.__first_song
       while current_song.get_next_song() != None:
         current_song = current_song.get_next_song()
-      current_song.set_next_song(new_song.get_title())
+      current_song.set_next_song(new_song)
       
 
 
@@ -43,9 +43,11 @@ class Playlist:
 
   def remove_song(self, title):
     current_song = self.__first_song
+    if current_song.get_title() == str(title).title():
+      self.__first_song = current_song.get_next_song()
     while current_song.get_next_song() != None:
       if current_song.get_next_song().get_title() == str(title).title():
-        current_song.set_next_song(current_song.get_next_song().get_next_song().get_title())
+        current_song.set_next_song(current_song.get_next_song().get_next_song())
         break
 
 
