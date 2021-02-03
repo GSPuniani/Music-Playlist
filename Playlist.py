@@ -10,7 +10,7 @@ class Playlist:
   def add_song(self, title):
     if self.__first_song == None:
       # Create a new song object with title passed in
-      new_song = Song(title)
+      new_song = Song(str(title).title())
       # Assign the new song as the first of the playlist
       self.__first_song = new_song
     else:

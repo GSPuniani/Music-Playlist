@@ -48,9 +48,9 @@ while True:
     index = playlist.find_song(song_title)
     
     if index == -1:
-      print(f"The song {song_title} is not in the set list.")
+      print(f"The song {song_title.title()} is not in the set list.")
     else:
-      print(f"The song {song_title} is song number {index+1}")
+      print(f"The song {song_title.title()} is song number {index+1}")
 
 
   # Option 5: Return the length of the playlist
